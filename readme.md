@@ -1,4 +1,4 @@
-The function of this app is to download the latest bing wallpaper and set it as wallpaper on MacOS.
+A simple script to download the latest bing wallpaper and set it as wallpaper on MacOS.
 
 In order to use it, convert the `changewallpaper.sh` to executeable file
 ```
