@@ -3,8 +3,6 @@
 require "net/http"
 require "json"
 require "fileutils"
-require "digest"
-require "securerandom"
 
 dir = "#{ENV['HOME']}/.bing_wallpaper"
 
