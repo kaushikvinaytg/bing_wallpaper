@@ -14,7 +14,7 @@ file_name = Dir.entries(dir).select { |f| File.file?("#{dir}/#{f}") }.first
 
 file_path = "#{dir}/#{file_name}" if file_name
 
-URL = URI("https://www.bing.com/HPImageArchive.aspx?format=js&idx=20&n=1&mkt=en-CA&uhd=1")
+URL = URI("https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-CA&uhd=1")
 
 response = Net::HTTP.get(URL)
 json_body = JSON.parse(response)
