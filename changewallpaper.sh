@@ -10,6 +10,11 @@ FileUtils.mkdir_p(dir)
 
 file_path = `osascript -e 'tell app "finder" to get posix path of (get desktop picture as alias)'`
 
+raw_resolution = `system_profiler SPDisplaysDataType | grep Resolution`
+resolution = raw_resolution.match(/(\d+) x (\d+)/)
+width = resolution[1]
+height = resolution[2]
+
 file_name = File.basename(file_path)&.strip
 
 URL = URI("https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-CA&uhd=1")
@@ -18,7 +23,7 @@ response = Net::HTTP.get(URL)
 json_body = JSON.parse(response)
 
 image_url = json_body["images"][0]["url"]
-image_url.gsub!(/(1920|1080)/, {"1920" => "3024", "1080" => "1964"})
+image_url.gsub!(/(1920|1080)/, {"1920" => width, "1080" => height})
 
 new_file_name = image_url.match(/\?id=([a-zA-Z0-9._-]+)&/)[1]
 
