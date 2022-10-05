@@ -1,14 +1,19 @@
-file_path=$(pwd)/changewallpaper.sh
-backup_file_exists=0
-test -f changewallpaper.plist-e && backup_file_exists=1
-
-if [ $backup_file_exists == 1 ]
+if [ -d "app" ]
 then
-  launchctl unload changewallpaper.plist
-  rm -rf changewallpaper.plist
-  mv changewallpaper.plist-e changewallpaper.plist
+  echo "came here"
+  launchctl unload app/changewallpaper.plist
+  rm -rf app
 fi
 
-sed -i'' -e "s=update-path=$file_path=g" changewallpaper.plist
-chmod +x changewallpaper.sh
-launchctl load changewallpaper.plist
+mkdir app
+
+cp changewallpaper.sh app/changewallpaper.sh
+cp changewallpaper.plist app/changewallpaper.plist
+
+file_path=$(pwd)/app/changewallpaper.sh
+
+sed -i'' -e "s=update-path=$file_path=g" app/changewallpaper.plist
+
+chmod +x app/changewallpaper.sh
+
+launchctl load app/changewallpaper.plist
