@@ -11,3 +11,9 @@ Then execute the `setup.sh` file
 ```
 
 Once done, you can log out and log back into to check if it is working. It will also try to update every 12 hours. 
+
+If you don't want to log out but still want to update the wallpaper after setup is complete, then you can manually run the script
+
+```
+./app/changewallpaper.sh
+```
