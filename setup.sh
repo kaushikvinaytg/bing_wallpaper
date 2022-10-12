@@ -1,19 +1,21 @@
-if [ -d "app" ]
+launch_agent_path="${HOME}/Library/LaunchAgents/changewallpaper.plist"
+
+if [ -f $launch_agent_path ]
 then
-  echo "came here"
-  launchctl unload app/changewallpaper.plist
-  rm -rf app
+  launchctl unload $launch_agent_path
+  rm -rf $launch_agent_path
 fi
 
-mkdir app
+file_path=$(pwd)/changewallpaper.sh
 
-cp changewallpaper.sh app/changewallpaper.sh
-cp changewallpaper.plist app/changewallpaper.plist
+sed -i'' -e "s=update-path=$file_path=g" changewallpaper.plist
 
-file_path=$(pwd)/app/changewallpaper.sh
+mkdir -p ~/Library/LaunchAgents
 
-sed -i'' -e "s=update-path=$file_path=g" app/changewallpaper.plist
+mv changewallpaper.plist $launch_agent_path
 
-chmod +x app/changewallpaper.sh
+mv changewallpaper.plist-e changewallpaper.plist
 
-launchctl load app/changewallpaper.plist
+chmod +x changewallpaper.sh
+
+launchctl load $launch_agent_path
