@@ -37,5 +37,8 @@ if file_name != new_file_name
         end
     end
     `osascript -e 'tell application "Finder" to set desktop picture to POSIX file "#{new_file_path}"'`
+    puts "Bing Wallpaper Info: Switched to #{new_file_name}."
+else
+  puts "Bing Wallpaper Info: No changes."
 end
 

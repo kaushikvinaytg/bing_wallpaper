@@ -6,9 +6,9 @@ then
   rm -rf $launch_agent_path
 fi
 
-file_path=$(pwd)/changewallpaper.sh
+file_path=$(pwd)
 
-sed -i'' -e "s=update-path=$file_path=g" changewallpaper.plist
+sed -i'' -e "s={update-path}=$file_path=g" changewallpaper.plist
 
 mkdir -p ~/Library/LaunchAgents
 

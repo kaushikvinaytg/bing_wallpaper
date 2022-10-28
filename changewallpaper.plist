@@ -5,10 +5,14 @@
 		<key>Label</key>
 		<string>com.changewallpaper.app</string>
 		<key>Program</key>
-		<string>update-path</string>
+		<string>{update-path}/changewallpaper.sh</string>
 		<key>RunAtLoad</key>
 		<true/>
 		<key>StartInterval</key>
 		<integer>3600</integer>
+		<key>StandardErrorPath</key>
+		<string>{update-path}/error.log</string>
+		<key>StandardOutPath</key>
+		<string>{update-path}/stdout.log</string>
 	</dict>
 </plist>
