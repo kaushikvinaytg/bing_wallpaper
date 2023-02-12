@@ -17,3 +17,15 @@ If you don't want to log out but still want to update the wallpaper after setup 
 ```
 ./changewallpaper.sh
 ```
+
+Command to remove all trace of this app
+
+```
+./remove.sh
+```
+
+Command to cleanup image folder except the current image
+
+```
+./cleanup.sh
+```
