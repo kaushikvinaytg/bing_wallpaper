@@ -10,7 +10,7 @@ Then execute the `setup.sh` file
 ./setup.sh
 ```
 
-Once done, you can log out and log back into to check if it is working. It will also try to update every 12 hours. 
+Once done, you can log out and log back into to check if it is working. It will check for new image every hour and update if present. 
 
 If you don't want to log out but still want to update the wallpaper after setup is complete, then you can manually run the script
 
