@@ -17,5 +17,7 @@ mv changewallpaper.plist $launch_agent_path
 mv changewallpaper.plist-e changewallpaper.plist
 
 chmod +x changewallpaper.sh
+chmod +x remove.sh
+chmod +x cleanup.sh
 
 launchctl load $launch_agent_path
