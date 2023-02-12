@@ -10,4 +10,6 @@ bing_folder_path="${HOME}/.bing_wallpaper"
 
 rm -rf $bing_folder_path
 
-rm -rf pwd
+current_dir=`pwd`
+
+rm -rf $current_dir
